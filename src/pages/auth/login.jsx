@@ -21,13 +21,31 @@ const Login=()=>{
     };
 
     useEffect(() => {
-        console.log('datos mutacion', dataMutation);
-        if(dataMutation){
-        if(dataMutation.login.token){
-          setToken(dataMutation.login.token);
-            navigate('/');
-        }}
-    }, [dataMutation, setToken, navigate]);
+      console.log('datos mutacion', dataMutation);
+      if(dataMutation){
+      // if(dataMutation.login.token!=='incorrectpass' && dataMutation.login.token
+      // && dataMutation.login.token!=='notuser'){
+      //   setToken(dataMutation.login.token);
+      //     navigate('/');
+      //     //console.log('ESTE ES EL TOKEN', dataMutation.login.token);
+      // }
+      // else{
+      //   console.log('Usuario o contraseña incorrectos');
+      //   toast('Usuario o contraseña incorrectos')
+      // }
+      if(dataMutation.login.token==='incorrectpass'){
+        alert('Contraseña incorrecta');
+      }
+      else if(dataMutation.login.token==='notuser'){
+        alert('Usuario no existe');
+      }
+      else if(dataMutation.login.token){
+        setToken(dataMutation.login.token);
+           navigate('/');
+      }
+      
+    }
+  }, [dataMutation, setToken, navigate]);
 
     return (
         <div className='flex flex-col items-center justify-center w-full h-full p-10'>
