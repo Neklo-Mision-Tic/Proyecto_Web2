@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import PrivateRoute from "components/PrivateRouter";
 
 
-const CrearProyecto=()=>{
+const CrearProyectoLider=()=>{
     const {form, formData, updateFormData}=useFormData();
     const[crearProyecto,{data: dataMutation, loading:loadingMutation, error: errorMutation}]=
     useMutation(CREAR_PROYECTO);
@@ -51,9 +51,9 @@ const CrearProyecto=()=>{
 
 
     return(
-      <PrivateRoute roleList={["ADMINISTRADOR"]}>
+      <PrivateRoute roleList={["ADMINISTRADOR","LIDER"]}>
         <div className='flex flex-col h-full w-full items-center justify-center p-10'>
-        <Link to='/admin/proyectos'>
+        <Link to='/allProjects'>
         <i className='fas fa-arrow-left text-gray-600 cursor-pointer font-bold text-xl hover:text-gray-900' />
       </Link>
         <h1 className='text-3xl font-bold my-4'>Crear Proyecto</h1>
@@ -63,8 +63,7 @@ const CrearProyecto=()=>{
             <Input label='Presupuesto' name='presupuesto' type='number' required />
             <Input label='Fecha de inicio:' name='fechaInicio' type='date' required />
             <Input label='Fecha fin:' name='fechaFin' type='date' required />
-            <DropDown label='Estado proyecto:' name='estado' required={true} options={Enum_EstadoProyecto}/>
-            <DropDown label='Fase proyecto:' name='fase' required={true} options={Enum_FaseProyecto}/>
+            
             
             
             {data ?           
@@ -89,4 +88,4 @@ const CrearProyecto=()=>{
       </PrivateRoute>
     );
 };
-export {CrearProyecto};
+export {CrearProyectoLider};

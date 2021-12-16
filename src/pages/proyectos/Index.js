@@ -18,9 +18,12 @@ const IndexProyectos = () => {
     }, [data])
 
   return (
-    
+    <PrivateRoute roleList={['ADMINISTRADOR']}>
     <div>
             <h1 className='text-3xl font-bold my-4'>Proyectos</h1>
+            <Link to={`/proyectos/crear`}>Crear Proyecto
+            <i className='fas fa-file-alt' />
+            </Link>
             <table className='tabla'>
             <thead>
                 <tr>
@@ -63,7 +66,7 @@ const IndexProyectos = () => {
                                })}   
                                <PrivateComponent roleList={['ADMINISTRADOR','LIDER']}>
                                <Link to={`/proyectos/crearObjetivo/${u._id}`}>
-                               <i class="fas fa-plus"> Add</i>
+                               <i class="fas fa-plus text-yellow-600 hover:text-yellow-400 cursor-pointer"> Add</i>
                                </Link>
                                </PrivateComponent>                
                         </td>
@@ -85,14 +88,11 @@ const IndexProyectos = () => {
                 );
                 })}
             </tbody>
-            :<div>no hay</div>}
+            :<div>Loading...</div>}
             </table>
 
-            <Link to={`/proyectos/crear`}>CrearProyecto
-            <i className='fas fa-file-alt' />
-            </Link>
         </div>
-
+</PrivateRoute>
     
   );
 };
