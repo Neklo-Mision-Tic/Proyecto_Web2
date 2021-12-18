@@ -21,7 +21,7 @@ import { CrearProyecto } from 'pages/proyectos/crearProyecto';
 import { IndexEstudiante } from 'pages/estudiantes/indexEstudiantes';
 import { CrearObjetivo } from 'pages/proyectos/crearObjetivo';
 import { EditarProyecto } from 'pages/proyectos/editarProyecto';
-
+import { IndexInscripcion } from 'pages/inscripcion/indexInscripcion';
 // import PrivateRoute from 'components/PrivateRoute';
 // const httplink=createHttpLink({
 //   uri:"https://servidor-gql-proyectos.herokuapp.com/graphql"
@@ -101,6 +101,7 @@ function App() {
               <Route path='/proyectos/editarProyecto/:_id' element={<EditarProyecto/>}/>
               <Route path='admin/usuarios' element={<IndexUsuarios />} />
               <Route path='estudiantes' element={<IndexEstudiante/>}/>
+              <Route path='/inscripciones' element={<IndexInscripcion/>}/>
             </Route>
 
             <Route path="/auth" element={<AuthLayaout/>}>

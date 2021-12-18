@@ -1,4 +1,4 @@
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import DropDown from "components/Dropdown";
 import { PROYECTOS } from "graphql/proyectos/query";
 import { GET_LIDERES } from "graphql/usuarios/queries";
@@ -9,12 +9,21 @@ import useFormData from 'hooks/useFormData';
 import ButtonLoading from "components/ButtonLoading";
 import { Enum_EstadoProyecto, Enum_FaseProyecto,Enum_TipoObjetivo } from "utils/enums";
 import PrivateComponent from "components/PrivateComponent";
+import { useUser } from "context/userContext";
+import { CREAR_INSCRIPCION } from "graphql/inscripcion/mutation";
+import { INSCRIPCIONES_BY_ESTUDIANTE } from "graphql/inscripcion/query";
 
 const IndexProyectosPublic=()=>{
     const {data, error, loading}=useQuery(PROYECTOS);
     const datal=useQuery(GET_LIDERES);
     const { form, formData, updateFormData } = useFormData(null);
     const navigate=useNavigate();
+    //const { userData } = useUser();
+    const {userData}=useUser()
+    console.log('AQUI TENEMOS EL USERDATA',{userData});
+    let estudiante=userData._id;
+    //console.log('aAQUI TENEMO S SOLO EL ID',estudiante);
+    const [crearInscripcion,{datai:mutationDatai,loadingi:loadini,errori:errori}]=useMutation(CREAR_INSCRIPCION);
     useEffect(() => {
         if(data){
         console.log('TODOS LOS PROYECTOS',data);
@@ -24,7 +33,14 @@ const IndexProyectosPublic=()=>{
     //     console.log('LOS LIDERES',datal);
     //  }, [datal])
     let idsLideres=[]; 
-    
+    const inscripcion=(proyecto)=>{
+        console.log('PROYECTO',proyecto,'ESTUDIANTE',estudiante);
+        //console.log('AQUI TENEMOS EL CONTEXTO', {estudiante});
+        crearInscripcion({
+            variables:{proyecto,estudiante}
+        });
+        toast.success('Solicitud realizada');
+    }
     
     
     // if(data){
@@ -109,13 +125,13 @@ const IndexProyectosPublic=()=>{
                         <td>{Enum_FaseProyecto[u.fase]}</td>
                         <td>{u.lider.nombre+' '+u.lider.apellido}</td>
                         <td>{new Intl.NumberFormat("co-CO",{style:"currency",currency:"COP"}).format(u.presupuesto)}</td>
-                        
+                        <td>
                                {u.objetivos.map((o)=>{
                                       return(
                                         <div>
-                                        <tr>{Enum_TipoObjetivo[o.tipo]+': '+o.descripcion}
+                                        {Enum_TipoObjetivo[o.tipo]+': '+o.descripcion}
                                         
-                                        </tr>
+                                        
                                         </div>
                                       );
                                })}   
@@ -129,7 +145,7 @@ const IndexProyectosPublic=()=>{
                                </Link>
                                </div>:<div><i class="text-yellow-600 hover:text-yellow-400 cursor-pointer"> Inactivo</i></div>
                                }
-                               </PrivateComponent>
+                               </PrivateComponent></td>
                         
                         <PrivateComponent roleList={['ADMINISTRADOR','LIDER']}>
                         <td>
@@ -146,6 +162,11 @@ const IndexProyectosPublic=()=>{
                         <td>
                         <PrivateComponent roleList={['ESTUDIANTE']}>
                                 <div>Inscripción</div>
+                                <div>
+                                    {Enum_EstadoProyecto[u.estado]==='Activo'?
+                                    <div><button onClick={inscripcion.bind(this,u._id)}><i class="fas fa-edit text-green-600 hover:text-green-400 cursor-pointer"> Inscribción</i></button></div>:
+                                    <div><i class="text-red-600 hover:text-red-400 cursor-pointer"> Inactivo</i></div>}
+                                </div>
                         </PrivateComponent>
                         </td>
                     </tr>
