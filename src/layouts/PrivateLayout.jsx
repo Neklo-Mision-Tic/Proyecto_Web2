@@ -30,6 +30,7 @@ const PrivateLayout = () => {
       navigate('/auth/login');
     }
   setLoadingAuth(false);}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataMutation, setToken,loadingAuth]);
 
   useEffect(() => {
