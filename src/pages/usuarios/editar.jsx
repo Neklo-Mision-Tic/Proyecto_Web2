@@ -12,7 +12,7 @@ import { Enum_EstadoUsuario } from "utils/enums";
 import { Enum_Rol } from "utils/enums";
 import PrivateRoute from "components/PrivateRouter";
 import PrivateComponent from "components/PrivateComponent";
-import { ELIMINAR_USUARIO } from "graphql/usuarios/mutations";
+//import { ELIMINAR_USUARIO } from "graphql/usuarios/mutations";
 
 const EditarUsuario=()=>{
     const { form, formData, updateFormData } = useFormData(null);

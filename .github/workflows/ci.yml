@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - ramaOsbaldo
 
 jobs:
   build:
@@ -22,9 +22,9 @@ jobs:
     - name: yarn install
       run: |
         yarn install
-    - name: yarn test
-      run: |
-        yarn test
+    # - name: yarn test
+    #   run: |
+    #     yarn test
       env:
         CI: true
     - name: yarn build
@@ -35,4 +35,4 @@ jobs:
         git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
     - name: Deploy to Heroku
       run: |
-        git push heroku HEAD:master -f
+        git push heroku HEAD:ramaOsbaldo -f

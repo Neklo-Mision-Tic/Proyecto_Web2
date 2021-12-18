@@ -17,7 +17,7 @@ const CrearProyecto=()=>{
     const {form, formData, updateFormData}=useFormData();
     const[crearProyecto,{data: dataMutation, loading:loadingMutation, error: errorMutation}]=
     useMutation(CREAR_PROYECTO);
-    const {data, error, loading}=useQuery(GET_LIDERES);
+    const {data}=useQuery(GET_LIDERES);
     
     useEffect(() => {
         console.log('RESULTADO QUERY ',data);

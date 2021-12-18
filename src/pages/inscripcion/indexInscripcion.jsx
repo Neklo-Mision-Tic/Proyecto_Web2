@@ -6,20 +6,20 @@ import { APROBAR_INSCRIPCION } from "graphql/inscripcion/mutation";
 import { INSCRIPCIONES } from "graphql/inscripcion/query";
 
 
-import React ,{useEffect} from "react";
+//import React ,{useEffect} from "react";
 import { toast } from "react-toastify";
 
 const IndexInscripcion=()=>{
-    const{data, error, loading}=useQuery(INSCRIPCIONES);
-    const [aprobarInscripcion,{datam:mutationData, loadingm:mutationLoading,errorm:mutationError}]=useMutation(APROBAR_INSCRIPCION);
-    const [rechazarInscripcion,{datar:mutationDatar,loadingr:mutationLoadingr,errorr:mutationErrorr}]=useMutation(RECHAZAR_INSCRIPCION);
-    useEffect(() => {
-        if (data && data.Inscripciones){
-            data.Inscripciones.map((m)=>{
-                console.log('dfsdf  nhdkhfdhnJHDFJKHD',m.estudiante.nombre);
-            })
-        }
-    }, [data]);
+    const{data, loading}=useQuery(INSCRIPCIONES);
+    const [aprobarInscripcion]=useMutation(APROBAR_INSCRIPCION);
+    const [rechazarInscripcion]=useMutation(RECHAZAR_INSCRIPCION);
+    // useEffect(() => {
+    //     if (data && data.Inscripciones){
+    //         data.Inscripciones.map((m)=>{
+    //             console.log('dfsdf  nhdkhfdhnJHDFJKHD',m.estudiante.nombre);
+    //         })
+    //     }
+    // }, [data]);
 
     const aprobarSolicitud=(_id)=>{
         

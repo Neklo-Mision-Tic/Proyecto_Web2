@@ -7,12 +7,12 @@ import ButtonLoading from "components/ButtonLoading";
 import { toast } from "react-toastify";
 import DropDown from "components/Dropdown";
 import PrivateRoute from "components/PrivateRouter";
-import PrivateComponent from "components/PrivateComponent";
+//import PrivateComponent from "components/PrivateComponent";
 import { GET_PROYECTO } from "graphql/proyectos/query";
 import { EDITAR_PROYECTO } from "graphql/proyectos/mutations";
 import { Enum_EstadoProyecto } from "utils/enums";
 import { Enum_FaseProyecto } from "utils/enums";
-import { GET_USUARIO } from "graphql/usuarios/queries";
+//import { GET_USUARIO } from "graphql/usuarios/queries";
 import { GET_LIDERES } from "graphql/usuarios/queries";
 
 
@@ -40,7 +40,7 @@ const EditarProyectos=()=>{
         console.log("Mutacion edicion", mutationData);
         }, [mutationData]);
 
-        const {data,error,loading}=useQuery(GET_LIDERES);
+        const {data}=useQuery(GET_LIDERES);
         console.log('DATA',data);
         useEffect(() => {
             if(queryError){

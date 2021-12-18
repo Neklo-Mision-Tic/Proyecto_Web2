@@ -2,16 +2,16 @@ import React, {useEffect} from "react";
 import { useParams, Link } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
 import { GET_USUARIO } from "graphql/usuarios/queries";
-import Input from "components/Input";
+//import Input from "components/Input";
 import useFormData from 'hooks/useFormData';
 import ButtonLoading from "components/ButtonLoading";
 import { EDITAR_ESTADO_USUARIO } from "graphql/usuarios/mutations";
 import { toast } from "react-toastify";
 import DropDown from "components/Dropdown";
 import { Enum_EstadoUsuario } from "utils/enums";
-import { Enum_Rol } from "utils/enums";
+//import { Enum_Rol } from "utils/enums";
 import PrivateRoute from "components/PrivateRouter";
-import PrivateComponent from "components/PrivateComponent";
+//import PrivateComponent from "components/PrivateComponent";
 
 
 const EditarEstadoUsuario=()=>{
