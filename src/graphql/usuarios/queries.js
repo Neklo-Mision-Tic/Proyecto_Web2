@@ -1,15 +1,39 @@
-import { gql } from "@apollo/client";
+import {gql} from '@apollo/client';
 
-const GET_USUARIOS = gql `
+const GET_USUARIOS=gql`
 query Usuarios {
-  Usuarios {
-    _id
-    nombre
-    apellido
-    correo
-    identificacion
-    rol
+    Usuarios {
+      _id
+      nombre
+      apellido
+      identificacion
+      correo
+      estado
+      rol
+    }
+  }
+`
+
+const GET_USUARIO=gql`
+query BuscarUsuario($_id: String!) {
+  buscarUsuario(_id: $_id) {
+      _id
+      nombre
+      apellido
+      identificacion
+      correo
+      estado
+      rol
   }
 }
-`;
-export {GET_USUARIOS}
+`
+const GET_LIDERES=gql`
+query BuscarLider {
+  buscarLider {
+    nombre
+    apellido
+    _id
+  }
+}
+`
+export {GET_USUARIOS, GET_USUARIO,GET_LIDERES};
