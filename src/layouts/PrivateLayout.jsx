@@ -38,9 +38,9 @@ const PrivateLayout = () => {
      }, [authToken]);
 
   if (loadingMutation || loadingAuth)return <div>Loading...</div>;
-  // if(!authToken) {
-  //   navigate('/auth/login');
-  // }
+  if(!authToken) {
+    navigate('/auth/login');
+  }
      
 
   return (
