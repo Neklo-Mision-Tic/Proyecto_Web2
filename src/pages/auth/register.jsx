@@ -16,7 +16,7 @@ const Register=()=>{
     //Me ayuda a trabajar con formularios
     const {form, formData, updateFormData}=useFormData();
 
-    const [registro, {data: dataMutation, loading:loadingMutation, error: errorMutation}]=
+    const [registro, {data: dataMutation}]=
     useMutation(REGISTRO);
 
     const submitForm=(e)=>{

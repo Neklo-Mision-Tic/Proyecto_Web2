@@ -12,7 +12,7 @@ const Login=()=>{
     const navigate=useNavigate();
     const {setToken}=useAuth();
     const {form,formData,updateFormData}=useFormData();
-    const [login, {data:dataMutation,loading:mutationLoading,error:mutationError}]=useMutation(LOGIN);
+    const [login, {data:dataMutation,loading:mutationLoading}]=useMutation(LOGIN);
     const submitForm=(e)=>{
         e.preventDefault();
         login({
