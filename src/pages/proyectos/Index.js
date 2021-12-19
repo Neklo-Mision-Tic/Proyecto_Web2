@@ -22,7 +22,7 @@ const IndexProyectos = () => {
     <div>
             <h1 className='text-3xl font-bold my-4'>Proyectos</h1>
             <Link to={`/proyectos/crear`}>Crear Proyecto
-            <i className='fas fa-file-alt' />
+            <i className='fas fa-play' />
             </Link>
             <table className='tabla'>
             <thead>
