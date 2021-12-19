@@ -11,7 +11,7 @@ const PrivateLayout = () => {
   const navigate=useNavigate();
   const {authToken,setToken,}=useAuth();
   const [loadingAuth, setLoadingAuth]=useState(true)
-  const [refreshToken, {data:dataMutation, loading:loadingMutation, error:errorMutation}]=
+  const [refreshToken, {data:dataMutation, loading:loadingMutation}]=
   useMutation(REFRESH_TOKEN);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const PrivateLayout = () => {
       navigate('/auth/login');
     }
   setLoadingAuth(false);}
-  }, [dataMutation, setToken,loadingAuth]);
+  //}, [dataMutation, setToken,loadingAuth]);
 
   useEffect(() => {
       console.log('TOKEN ACTTUAL',authToken);
