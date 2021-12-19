@@ -1,9 +1,10 @@
+# CI/DI
 name: CI
 
 on:
   push:
     branches:
-      - ramaOsbaldo
+      - main
 
 jobs:
   build:
@@ -22,9 +23,9 @@ jobs:
     - name: yarn install
       run: |
         yarn install
-    - name: yarn test
-      run: |
-        yarn test
+    # - name: yarn test
+    #   run: |
+    #     yarn test
       env:
         CI: true
     - name: yarn build
