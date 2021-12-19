@@ -5,8 +5,8 @@ import Input from "components/Input";
 import DropDown from "components/Dropdown";
 import ButtonLoading from "components/ButtonLoading";
 import useFormData from "hooks/useFormData";
-import { Enum_EstadoProyecto } from "utils/enums";
-import { Enum_FaseProyecto } from "utils/enums";
+//import { Enum_EstadoProyecto } from "utils/enums";
+//import { Enum_FaseProyecto } from "utils/enums";
 import { GET_LIDERES } from "graphql/usuarios/queries";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ const CrearProyectoLider=()=>{
     const {form, formData, updateFormData}=useFormData();
     const[crearProyecto,{data: dataMutation, loading:loadingMutation, error: errorMutation}]=
     useMutation(CREAR_PROYECTO);
-    const {data, error, loading}=useQuery(GET_LIDERES);
+    const {data}=useQuery(GET_LIDERES);
     
     useEffect(() => {
         console.log('RESULTADO QUERY ',data);

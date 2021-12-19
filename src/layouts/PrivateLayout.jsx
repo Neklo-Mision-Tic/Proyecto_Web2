@@ -30,7 +30,8 @@ const PrivateLayout = () => {
       navigate('/auth/login');
     }
   setLoadingAuth(false);}
-  //}, [dataMutation, setToken,loadingAuth]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dataMutation, setToken,loadingAuth]);
 
   useEffect(() => {
       console.log('TOKEN ACTTUAL',authToken);
@@ -38,9 +39,9 @@ const PrivateLayout = () => {
      }, [authToken]);
 
   if (loadingMutation || loadingAuth)return <div>Loading...</div>;
-  // if(!authToken) {
-  //   navigate('/auth/login');
-  // }
+  if(!authToken) {
+    navigate('/auth/login');
+  }
      
 
   return (

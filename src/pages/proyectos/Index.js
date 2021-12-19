@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import PrivateComponent from 'components/PrivateComponent';
 import PrivateRoute from 'components/PrivateRouter';
-import { BUSCAR_ESTUDIANTES } from 'graphql/estudiantes/query';
+//import { BUSCAR_ESTUDIANTES } from 'graphql/estudiantes/query';
 import { PROYECTOS } from 'graphql/proyectos/query';
 import React, {useEffect} from "react";
 import { Link, } from "react-router-dom";
@@ -9,7 +9,7 @@ import { Enum_EstadoProyecto, Enum_FaseProyecto,Enum_TipoObjetivo } from "utils/
 
 const IndexProyectos = () => {
 
-  const {data, error, loading}=useQuery(PROYECTOS);
+  const {data}=useQuery(PROYECTOS);
     useEffect(() => {
         console.log('ESTOS SON LOS PROYECTOS',data);
         //console.log('SOLO EL LIDER',data.Proyectos[3].nombre)
@@ -42,9 +42,7 @@ const IndexProyectos = () => {
             <tbody>
                 {data &&
                     data.Proyectos.map((u)=>{
-                      {/* console.log('QUE TENEMOS EN EL ULIDER',u.lider.nombre);
-                      console.log('QUE TENEMOS EN EL Uobjetivos',u.objetivos.length);
-                       */}
+
                         return(
                     <tr key={u._id}>
                         <td>{u.nombre}</td>

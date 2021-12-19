@@ -15,16 +15,16 @@ const ProyectosByLider=()=>{
         loading:queryLoading}=useQuery(GET_PROYECTOS_BY_LIDER,{
         variables:{_id},
     });
-    let nombreLider=''
-    let estado='';
-    if(queryData){
-        queryData.buscarProyectosByLider.map((i)=>{
-            console.log('LIDER',i.lider.nombre);
-            nombreLider=i.lider.nombre
-            estado=i.estado;
-        });
-    }
-    console.log('EL NOMBRE DEL LIDER ES ',nombreLider);
+    let nombreLider='';
+    // //let estado ='';
+    // if(queryData){
+    //     queryData.buscarProyectosByLider.map((i)=>{
+    //         console.log('LIDER',i.lider.nombre);
+    //         nombreLider=i.lider.nombre;
+    //         //estado =i.estado;
+    //     });
+    // }
+   // console.log('EL NOMBRE DEL LIDER ES ',nombreLider);
     
     useEffect(() => {
         if (queryError){

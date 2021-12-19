@@ -10,7 +10,7 @@ const IndexEstudiante=()=>{
     const { userData } = useUser();
     
     var rolLogueado=userData.rol;
-    const {data, error, loading}=useQuery(BUSCAR_ESTUDIANTES);
+    const {data}=useQuery(BUSCAR_ESTUDIANTES);
     useEffect(() => {
         console.log('ESTOS SON LOS ESTUDIANTE',data);
     }, [data])

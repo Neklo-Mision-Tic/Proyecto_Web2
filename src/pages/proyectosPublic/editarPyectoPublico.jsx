@@ -4,7 +4,7 @@ import { EDITAR_PROYECTO } from "graphql/proyectos/mutations";
 import { GET_PROYECTO } from "graphql/proyectos/query";
 import useFormData from "hooks/useFormData";
 import React, {useEffect} from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Input from "components/Input";
 import ButtonLoading from "components/ButtonLoading";

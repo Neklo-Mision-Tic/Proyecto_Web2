@@ -11,9 +11,9 @@ import { Enum_EstadoProyecto, Enum_FaseProyecto,Enum_TipoObjetivo } from "utils/
 import PrivateComponent from "components/PrivateComponent";
 import { useUser } from "context/userContext";
 import { CREAR_INSCRIPCION } from "graphql/inscripcion/mutation";
-import { INSCRIPCIONES_BY_ESTUDIANTE } from "graphql/inscripcion/query";
+//import { INSCRIPCIONES_BY_ESTUDIANTE } from "graphql/inscripcion/query";
 const IndexProyectosPublic=()=>{
-    const {data, error, loading}=useQuery(PROYECTOS);
+    const {data, error}=useQuery(PROYECTOS);
     const datal=useQuery(GET_LIDERES);
     const { form, formData, updateFormData } = useFormData(null);
     const navigate=useNavigate();
@@ -22,7 +22,7 @@ const IndexProyectosPublic=()=>{
     console.log('AQUI TENEMOS EL USERDATA',{userData});
     let estudiante=userData._id;
     //console.log('aAQUI TENEMO S SOLO EL ID',typeof(estudiante));
-    const [crearInscripcion,{datai:mutationDatai,loadingi:loadini,errori:errori}]=useMutation(CREAR_INSCRIPCION);
+    const [crearInscripcion]=useMutation(CREAR_INSCRIPCION);
     // const {
     //     data:queryData, 
     //     error:queryError, 
@@ -50,12 +50,12 @@ const IndexProyectosPublic=()=>{
         }
     }, [error])
     
-    if (loading) return<div>Cargando...</div>;
-    if(datal.data){
-        datal.data.buscarLider.map((u)=>{
-            console.log(u._id);
-            idsLideres.push(u._id);
-        });}
+    // if (loading) return<div>Cargando...</div>;
+    // if(datal.data){
+    //     datal.data.buscarLider.map((u)=>{
+    //         console.log(u._id);
+    //         idsLideres.push(u._id);
+    //     });}
     const submitForm = (e) => {
         e.preventDefault();
         let ellider=idsLideres[formData.lider];
