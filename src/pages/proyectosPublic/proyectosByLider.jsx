@@ -83,9 +83,9 @@ const ProyectosByLider=()=>{
                                 <div>
                                <Link to={`/proyectosByLider/crearObjetivoLider/${u._id}`}>
                                
-                               <i class="fas fa-plus text-yellow-600 hover:text-yellow-400 cursor-pointer"> Add</i>
+                               <i class="fas fa-plus text-red-600 hover:text-red-400 cursor-pointer"> Add</i>
                                </Link>
-                               </div>:<div><i class="text-yellow-600 hover:text-yellow-400 cursor-pointer"> Inactivo</i></div>
+                               </div>:<div><i class="text-red-600 hover:text-red-400 cursor-pointer"> Inactivo</i></div>
                                }
                                </PrivateComponent>
                                </td>
@@ -96,8 +96,8 @@ const ProyectosByLider=()=>{
                         {
                             Enum_EstadoProyecto[u.estado]==='Activo'?
                             <div><Link to={`/allProjects/liderEditarProyecto/${u._id}`}>
-                                <i className='fas fa-pen text-yellow-600 hover:text-yellow-400 cursor-pointer' />
-                                </Link></div>:<div><i class="text-yellow-600 hover:text-yellow-400 cursor-pointer"> Inactivo</i></div>
+                                <i className='fas fa-pen text-red-600 hover:text-red-400 cursor-pointer' />
+                                </Link></div>:<div><i class="text-red-600 hover:text-red-400 cursor-pointer"> Inactivo</i></div>
 
                         
                         }

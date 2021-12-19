@@ -44,7 +44,7 @@ const IndexEstudiante=()=>{
                 
                 <td>
                     <Link to={`/usuarios/editarEstado/${u._id}`}>
-                      <i className='fas fa-pen text-yellow-600 hover:text-yellow-400 cursor-pointer' />
+                      <i className='fas fa-pen text-red-600 hover:text-red-400 cursor-pointer' />
                     </Link>  
                     </td>    :
                     <div>sin acceso</div>   

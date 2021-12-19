@@ -57,7 +57,7 @@ const IndexUsuarios=()=>{
                         
                         <td>
                         <Link to={`/usuarios/editar/${u._id}`}>
-                          <i className='fas fa-pen text-yellow-600 hover:text-yellow-400 cursor-pointer' />
+                          <i className='fas fa-pen text-red-600 hover:text-red-400 cursor-pointer' />
                         </Link>  
                         </td>
                     
@@ -65,7 +65,7 @@ const IndexUsuarios=()=>{
                         <PrivateComponent roleList={['ADMINISTRADOR']}>
                         <td>
                         <Link to={`/usuarios/eliminar/${u._id}`}>
-                          <i className='fas fa-trash-alt text-yellow-600 hover:text-yellow-400 cursor-pointer' />
+                          <i className='fas fa-trash-alt text-red-600 hover:text-red-400 cursor-pointer' />
                         </Link>
                         </td>
                         </PrivateComponent>

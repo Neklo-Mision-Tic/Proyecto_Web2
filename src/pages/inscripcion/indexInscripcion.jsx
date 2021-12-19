@@ -77,7 +77,7 @@ const IndexInscripcion=()=>{
                                             u.estado==='PENDIENTE'?
                                             <div className='grid grid-cols-2 gap-1'><div><button onClick={aprobarSolicitud.bind(this,u._id)}><i className="fas fa-check  text-green-600 hover:text-green-400 cursor-pointer"></i></button></div><div><button onClick={rechazarSolicitud.bind(this,u._id)}><i class="fas fa-times  text-red-600 hover:text-red-400 cursor-pointer"></i></button></div></div>:
                                             u.estado==='ACEPTADO'?
-                                            <div><i className="text-green-600 hover:text-yellow-400 cursor-pointer"> Solicitud aceptada</i></div>:
+                                            <div><i className="text-green-600 hover:text-red-400 cursor-pointer"> Solicitud aceptada</i></div>:
                                             <div><i className="text-red-600 hover:text-green-400 cursor-pointer"> Solicitud rechazada</i></div>
                                         }
                                     </td>
@@ -86,9 +86,9 @@ const IndexInscripcion=()=>{
                                 <PrivateComponent roleList={['ESTUDIANTE']}>
                                     <td>{
                                         u.estado==="PENDIENTE"?
-                                            <div><i className="text-yellow-600 hover:text-red-400 cursor-pointer"> Solicitud pendiente</i></div>:
+                                            <div><i className="text-red-600 hover:text-red-400 cursor-pointer"> Solicitud pendiente</i></div>:
                                         u.estado==="ACEPTADO"?
-                                            <div><i className="text-green-600 hover:text-yellow-400 cursor-pointer"> Solicitud aceptada</i></div>:
+                                            <div><i className="text-green-600 hover:text-red-400 cursor-pointer"> Solicitud aceptada</i></div>:
                                         <div><i className="text-red-600 hover:text-green-400 cursor-pointer"> Solicitud rechazada</i></div>
                                         }
                                         
