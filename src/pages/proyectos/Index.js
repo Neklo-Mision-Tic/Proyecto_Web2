@@ -86,7 +86,7 @@ const IndexProyectos = () => {
                 );
                 })}
             </tbody>
-            :<div>Loading...</div>}
+            :<div>Cargando...</div>}
             </table>
 
         </div>

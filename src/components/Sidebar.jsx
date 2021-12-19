@@ -6,15 +6,15 @@ import PrivateComponent from './PrivateComponent';
 const SidebarLinks = () => {
   return (
     <ul className='mt-12'>
-      <SidebarRoute to='' title='Inicio' icon='fas fa-home' />     
+      <SidebarRoute to='' title='Inicio' icon='fas fa-house-user' />     
       
-      <SidebarRoute to='/estudiantes' title='Estudiantes' icon='fas fa-user' />
-      <SidebarRoute to='/allProjects' title='Proyectos' icon='fas fa-archive' />
-      <SidebarRoute to='/inscripciones' title='Inscripciones' icon='fas fa-edit' />
-      <SidebarRoute to='/admin' title='Admin' icon='fas fa-tools' />
+      <SidebarRoute to='/estudiantes' title='Estudiantes' icon='fas fa-users' />
+      <SidebarRoute to='/allProjects' title='Proyectos' icon='fas fa-project-diagram' />
+      <SidebarRoute to='/inscripciones' title='Inscripciones' icon='fas fa-book' />
+      <SidebarRoute to='/admin' title='Admin' icon='fas fa-wrench' />
       <PrivateComponent roleList={['ADMINISTRADOR']}>
-      <SidebarRoute to='/admin/usuarios' title='Usuarios' icon='fas fa-user' />
-      <SidebarRoute to='/admin/proyectos' title='Proyectos' icon='fas fa-archive' />
+      <SidebarRoute to='/admin/usuarios' title='Usuarios' icon='fas fa-users' />
+      <SidebarRoute to='/admin/proyectos' title='Proyectos' icon='fas fa-project-diagram' />
       </PrivateComponent>
       <Logout />
     </ul>
@@ -31,7 +31,7 @@ const Logout = () => {
     <li onClick={() => deleteToken()}>
       <NavLink to='/auth/login' className='sidebar-route text-red-700'>
         <div className='flex items-center'>
-          <i className='fas fa-sign-out-alt' />
+          <i className='fas fa-running' />
           <span className='text-sm  ml-2'>Cerrar Sesión</span>
         </div>
       </NavLink>
