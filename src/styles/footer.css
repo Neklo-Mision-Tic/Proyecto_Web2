@@ -12,9 +12,9 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 20px;
+    margin: 30px;
     max-width: 1200px;
-    margin-top: 350px;
+    margin-top: 200px;
 }
 
 .box_footer{
@@ -24,12 +24,12 @@ footer{
 }
 
 .box_footer .logo_footer img{
-    width: 120px;
+    width: 110px;
     
 }
 
 .box_footer .terms{
-    max-width: 350px;
+    max-width: 400px;
     margin-top: 20px;
     font-weight: 500;
     color: #7a7a7a;
@@ -52,7 +52,7 @@ footer{
     opacity: 0.8;
 }
 .box_footer a{
-    margin-top: 10px;
+    margin-top: 5px;
     color: #7a7a7a;
     font-weight: 600;
 }
