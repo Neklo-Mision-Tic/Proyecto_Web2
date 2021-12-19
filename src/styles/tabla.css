@@ -1,6 +1,11 @@
 .tabla {
+<<<<<<< HEAD
     width: 100%;
     margin: 10px;
+=======
+    width: 95%;
+    margin: 20px;
+>>>>>>> main
     overflow-y: scroll;
   }
   
@@ -11,11 +16,19 @@
   }
   
   .tabla th {
+<<<<<<< HEAD
     background-color: #04aa46;
     color: white;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
+=======
+    background-color: #69bff8;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+>>>>>>> main
   }
   
   .tabla tr:nth-child(even) {

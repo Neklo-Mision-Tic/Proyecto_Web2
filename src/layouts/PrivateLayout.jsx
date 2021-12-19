@@ -1,4 +1,5 @@
 import Sidebar from 'components/Sidebar';
+<<<<<<< HEAD
 import { Outlet, useNavigate } from 'react-router';
 import React, {useEffect, useState} from 'react';
 import { ToastContainer } from 'react-toastify';
@@ -44,6 +45,12 @@ const PrivateLayout = () => {
   }
      
 
+=======
+import { Outlet } from 'react-router';
+import React from 'react';
+
+const PrivateLayout = () => {
+>>>>>>> main
   return (
     <div className='flex flex-col md:flex-row flex-no-wrap h-screen'>
       <Sidebar />
@@ -52,7 +59,10 @@ const PrivateLayout = () => {
           <Outlet />
         </div>
       </div>
+<<<<<<< HEAD
       <ToastContainer/>
+=======
+>>>>>>> main
     </div>
   );
 };
