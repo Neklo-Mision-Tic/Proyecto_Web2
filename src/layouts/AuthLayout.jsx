@@ -13,4 +13,5 @@ const AuthLayaout =()=>{
     </div>
     )
 }
+
 export default AuthLayaout;
