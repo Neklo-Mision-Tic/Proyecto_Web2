@@ -9,9 +9,13 @@ const AuthLayaout =()=>{
           Proyecto Neklo.
           <Outlet />
         </div>
+        
       </div>
+      
     </div>
+    
     )
+    
 }
 
 export default AuthLayaout;
