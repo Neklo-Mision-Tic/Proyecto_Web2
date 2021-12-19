@@ -2,7 +2,7 @@
 
 ### ¿Cómo usar este proyecto?
 
-Paso 1: clonar el proyectos mision tic
+Paso 1: clonar el proyectos mision tic 2021
 
 `git clone `
 
