@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import { gql } from "@apollo/client";
-
-const GET_USUARIOS = gql `
-query Usuarios {
-  Usuarios {
-    _id
-    nombre
-    apellido
-    correo
-    identificacion
-    rol
-  }
-}
-`;
-export {GET_USUARIOS}
-=======
 import {gql} from '@apollo/client';
 
 const GET_USUARIOS=gql`
@@ -54,4 +37,3 @@ query BuscarLider {
 }
 `
 export {GET_USUARIOS, GET_USUARIO,GET_LIDERES};
->>>>>>> e1df3e3b733af89ec47d0b0cf2429b9457e5ea00

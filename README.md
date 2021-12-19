@@ -2,7 +2,7 @@
 
 ### ¿Cómo usar este proyecto?
 
-Paso 1: clonar el proyecto
+Paso 1: clonar el proyectos
 
 `git clone `
 
