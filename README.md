@@ -2,7 +2,7 @@
 
 ### ¿Cómo usar este proyecto?
 
-Paso 1: clonar el proyecto
+Paso 1: clonar el proyecto - https://github.com/Neklo-Mision-Tic/Proyecto_Web2.git
 
 `git clone `
 
