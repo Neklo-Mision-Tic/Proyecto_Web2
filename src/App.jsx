@@ -20,7 +20,7 @@ import EditarEstadoUsuario from 'pages/usuarios/editarEstado';
 import { CrearProyecto } from 'pages/proyectos/crearProyecto';
 import { IndexEstudiante } from 'pages/estudiantes/indexEstudiantes';
 import { CrearObjetivo } from 'pages/proyectos/crearObjetivo';
-import { editarProyectos } from 'pages/proyectos/editarProyectos';
+//import { editarProyectos } from 'pages/proyectos/editarProyectos';
 import { IndexInscripcion } from 'pages/inscripcion/indexInscripcion';
 // import PrivateRoute from 'components/PrivateRoute';
 // const httplink=createHttpLink({
