@@ -12,9 +12,6 @@ it('renders not authorized if the roles dont match', () => {
       </PrivateRouter>
     </UserContext.Provider>
   );
-  // expect(screen.getByTestId('not-authorized')).toHaveTextContent(
-  //   'No estás autorizado para ver este sitio.'
-  // );
 });
 
 it('renders the children if the user role is in the roleList', () => {
