@@ -1,15 +1,15 @@
 
 import React from 'react';
-import PrivateRoute from 'components/PrivateRoute';
+import PrivateRouter from 'components/PrivateRouter';
 import { render, screen } from '@testing-library/react';
 import { UserContext } from 'context/userContext';
 
 it('renders not authorized if the roles dont match', () => {
   render(
     <UserContext.Provider value={{ userData: { rol: 'LIDER' } }}>
-      <PrivateRoute roleList={['ADMINISTRADOR']}>
+      <PrivateRouter roleList={['ADMINISTRADOR']}>
         <div>Este es el children</div>
-      </PrivateRoute>
+      </PrivateRouter>
     </UserContext.Provider>
   );
   expect(screen.getByTestId('not-authorized')).toHaveTextContent(
@@ -20,9 +20,9 @@ it('renders not authorized if the roles dont match', () => {
 it('renders the children if the user role is in the roleList', () => {
   render(
     <UserContext.Provider value={{ userData: { rol: 'ADMINISTRADOR' } }}>
-      <PrivateRoute roleList={['ADMINISTRADOR']}>
+      <PrivateRouter roleList={['ADMINISTRADOR']}>
         <div data-testid='children'>Este es el children</div>
-      </PrivateRoute>
+      </PrivateRouter>
     </UserContext.Provider>
   );
   expect(screen.getByTestId('children')).toBeInTheDocument();
