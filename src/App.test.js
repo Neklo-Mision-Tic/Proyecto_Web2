@@ -17,14 +17,13 @@ it('renders not authorized if the roles dont match', () => {
   // );
 });
 
-// it('renders the children if the user role is in the roleList', () => {
-//   render(
-//     <UserContext.Provider value={{ userData: { rol: 'ADMINISTRADOR' } }}>
-//       <PrivateRouter roleList={['ADMINISTRADOR']}>
-//         <div data-testid='children'>Este es el children</div>
-//       </PrivateRouter>
-//     </UserContext.Provider>
-//   );
-//   expect(screen.getByTestId('children')).toBeInTheDocument();
-// });
-//Error
+it('renders the children if the user role is in the roleList', () => {
+  render(
+    <UserContext.Provider value={{ userData: { rol: 'ADMINISTRADOR' } }}>
+      <PrivateRouter roleList={['ADMINISTRADOR']}>
+        <div data-testid='children'>Este es el children</div>
+      </PrivateRouter>
+    </UserContext.Provider>
+  );
+  expect(screen.getByTestId('children')).toBeInTheDocument();
+});
