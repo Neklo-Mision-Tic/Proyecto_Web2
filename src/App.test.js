@@ -1,4 +1,5 @@
 
+//Test para revisar rutas privadas
 import React from 'react';
 import PrivateRouter from 'components/PrivateRouter';
 import { render, screen } from '@testing-library/react';
